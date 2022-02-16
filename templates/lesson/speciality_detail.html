@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load cache %}
+
+{% block content %}
+<div id="hero">
+    <div class="row">
+        <div class="col-lg-3 col-md-3">
+            <ul class="menu-spec">
+                <li class="menu-list-item">
+                    <a href="#">1 курс</a>
+                    <ul class="navbar-menu">
+                        {% cache 60 menu %}
+                        {% for discipline in disciplines %}
+                        {% if discipline.course == '1' %}
+                        <li><a href="{{ discipline.get_absolute_url }}">{{ discipline.name }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="menu-list-item">
+                    <a href="#">2 курс</a>
+                    <ul class="navbar-menu">
+                        {% for discipline in disciplines %}
+                        {% if discipline.course == '2' %}
+                        <li><a href="{{ discipline.get_absolute_url }}">{{ discipline.name }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="menu-list-item">
+                    <a href="#">3 курс</a>
+                    <ul class="navbar-menu">
+                        {% for discipline in disciplines %}
+                        {% if discipline.course == '3' %}
+                        <li><a href="{{ discipline.get_absolute_url }}">{{ discipline.name }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                        {% endcache %}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-9 col-md-9 d-flex align-items-center">
+            <div class="main-video-block">
+                <div class="container">
+                    <div class="video-object">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

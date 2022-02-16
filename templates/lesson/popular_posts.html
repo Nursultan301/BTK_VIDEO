@@ -1,0 +1,26 @@
+<div class="col-lg-8 col-md-8 col-sm-12">
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="test-inner mb-25">
+                <div class="author d-flex">
+                    {% if post.teacher.image %}
+                    <img src="{{ post.teacher.image.url }}" alt="" class="img-fluid">
+                    {% else %}
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
+                         alt="" class="img-fluid">
+                    {% endif %}
+                    <div class="author-info">
+                        <h4>{{ post.title }}</h4>
+                        <h6>{{ post.teacher }}</h6>
+                    </div>
+                </div>
+                <div class="testimonial-video">
+                    <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
+                </div>
+                <i class="fa fa-quote-right" aria-hidden="true"></i>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

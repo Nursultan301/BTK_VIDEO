@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+{% load static %}
+
+{% block content %}
+<section class="lesson__detail">
+    <div class="container">
+        <div class="lesson__content">
+            <div class="content__video">
+                {% if user.is_authenticated %}
+                {% video lesson.url '1090x530' %}
+                <h1 class="content__title">{{ lesson.title }}</h1>
+                {% else%}
+                <h4>Для просмотра видео необходимо войти в систему</h4>
+                <a href="{% url 'sign_in' %}" class="sign-in">Войти</a>
+                {% endif %}
+            </div>
+            <hr>
+        </div>
+        <div class="lesson__avatar">
+            <div class="profill d-block">
+                {% if lesson.teacher.image %}
+                <img src="{{ lesson.teacher.image.url }}" alt="btk user" width="50" height="50" class="avatar__image">
+                {% else %}
+                <img src="{% static 'images/avatar.png' %}" alt="btk user" width="50" height="50" class="avatar__image">
+                {% endif %}
+            </div>
+            <div class="avatar__name">
+                <h2 class="avatar__title">{{ lesson.teacher }}</h2>
+                <p class="avatar__education">Преповадитель {{ lesson.discipline }}</p>
+            </div>
+        </div>
+        <div class="title__description">
+            <p class="description__link">{{ lesson.description|safe }} </p>
+        </div>
+        <hr>
+    </div>
+</section>
+{% endblock content %}
+

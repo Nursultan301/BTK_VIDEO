@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+{% load static %}
+{% load cache %}
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <title>Бишкекский Технический Колледж</title>
+
+    <meta content="Миссия колледжа заключается в эффективном решении социальных, экономических и технологических проблем региона путем подготовки специалистов среднего звена, конкурентоспособных на рынке труда, компетентных, ответственных, обладающих высокими гражданскими и нравственными качествами."
+          name="description">
+    <meta name="subject"
+          content="Бишкекский технический колледж предоставляет широкую возможность выбора специальностей, приносящих успех и стабильный доход в различных сферах деятельности! Наши специальности были, есть и будут перспективными, высокооплачиваемыми и интересными!">
+    <meta property="og:title" content="Бишкекский Технический Колледж">
+
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="ya-title=#ffffff,ya-dock=fade">
+    <meta name="keywords"
+          content="BTK, btk, btk.kg, btkkg, БТК, БТККЖ, ИЕЛЮЛП, виртуальный, виртуальный колледж, Бишкек, Бишкекский,  абитуриент, как поступить в колледж, колледжы бишкека, колледж, программисты, горные факультет, горное дело, айти спецальност, it, Бишкекский колледж, Бишкекский Технический Колледж, Технический Колледж">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta property="og:image" content="{% static 'images/logo/logo-70.png' %}">
+    <meta property="og:site_name" content="Бишкекский Технический Колледж">
+    <meta property="og:url" content="https://btk.kg/">
+    <link href="{% static 'images/favicon.svg' %}" rel="shortcut icon" type="image/x-icon">
+
+    <!-- Web Font -->
+    <link href="{% static 'css/google_fonds.css' %}" rel="stylesheet">
+
+    <!-- ========================= CSS here ========================= -->
+    <link href="{% static 'css/bootstrap-5.0.0-alpha-2.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/LineIcons.2.0.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'css/tiny-slider.css' %}" rel="stylesheet">
+    <link href="{% static 'css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/reset.css' %}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'css/mystyle.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'plagins/slick-1.8.1/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'plagins/slick-1.8.1/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media.css' %}">
+</head>
+<body>
+
+<!-- Preloader -->
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-icon">
+            <span></span> <span></span>
+        </div>
+    </div>
+</div>
+<!-- /End Preloader -->
+
+<!-- Start Header Area -->
+<div class="container-main">
+    <header class="header">
+        <!-- Toolbar Start -->
+        <div class="toolbar-contact-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-8">
+                        <div class="toolbar-contact-tel wow fadeInLeft" data-wow-delay=".3s">
+                            <ul>
+                                <li class='d-lg-inline-block d-none'>Пн-Пт: 08:00 до 17:00</li>
+                                <li><a href="tel:+996312610942"><i class="fa fa-phone"></i> +996 (312) 61-09-42</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-4">
+                        <div class="toolbar-contact-tel wow fadeInLeft" data-wow-delay=".3s">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-5 block-sign-in-lg">
+                        <div class="toolbar-contact button wow fadeInRight" data-wow-delay=".4s"
+                             style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInRight;">
+                            {% if user.is_authenticated %}
+                                <a href="#"><i class="fa fa-user mr-1"></i> В личный кабинет</a>
+                                <span class="mr-2 ml-2">|</span>
+                                <a href="{% url 'logout' %}"><i class="fa fa-sign-out mr-1"></i> Выйти</a>
+                            {% else %}
+                                <a href="{% url 'sign_in' %}"><i class="fa fa-sign-in mr-1"></i> Войти</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="toolbar-area d-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="wow main_logo fadeInLeft" data-wow-delay=".3s">
+                            <a href="https://www.gov.kg/ky" target="_blank"><img id="logo"
+                                                                                 src="{% static 'images/logo/Kyrgyzstan.png' %}"
+                                                                                 alt="Герб Кыргызстана"></a>
+                        </div>
+                    </div>
+                    <div class="col-8 main_title">
+                        <h1>Бишкекский Технический Колледж</h1>
+                        <marquee>
+                            Миссия колледжа заключается в эффективном решении социальных, экономических и
+                            технологических проблем региона путем подготовки специалистов среднего звена,
+                            конкурентоспособных на рынке труда, компетентных, ответственных, обладающих высокими
+                            гражданскими и нравственными качествами.
+                        </marquee>
+                    </div>
+                    <div class="col-2">
+                        <div class="wow gov_logo fadeInRight" data-wow-delay=".4s"
+                             style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInRight;">
+                            <a href="{% url 'home' %}"><img id="logo" src="{% static 'images/logo/logo-04.svg' %}"
+                                                            alt="Логотип колледжа"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Toolbar End -->
+        <div class="main-menu">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <div class="row d-lg-none d-md-flex d-xl-none main-md-menu w-100 m-auto">
+                                    <div class="col-2 d-flex justify-content-center align-items-center">
+                                        <button aria-controls="navbarSupportedContent" aria-expanded="false"
+                                                aria-label="Toggle navigation" class="navbar-toggler"
+                                                data-target="#navbarSupportedContent" data-toggle="collapse"
+                                                type="button"><span class="toggler-icon"></span> <span
+                                                class="toggler-icon"></span> <span class="toggler-icon"></span></button>
+                                    </div>
+                                    <div class="col-10 block-sign-in-md d-flex justify-content-center align-items-center">
+                                        <div class="wow fadeInRight ml-auto" data-wow-delay=".4s"
+                                             style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInRight;">
+                                            {% if user.is_authenticated %}
+                                                <a href="#"><i class="fa fa-user mr-1"></i> В личный кабинет</a>
+                                                <span class="mr-2 ml-2">|</span>
+                                                <a href="{% url 'logout' %}"><i class="fa fa-sign-out mr-1"></i> Выйти</a>
+                                            {% else %}
+                                                <a href="{% url 'sign_in' %}"><i class="fa fa-sign-in mr-1"></i> Войти</a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="collapse navbar-collapse sub-menu-bar " id="navbarSupportedContent">
+                                    <ul class="navbar-nav m-auto" id="nav">
+                                        <li class="nav-item">
+                                            <a class="active" href="{% url 'home' %}">ГЛАВНАЯ</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="#" data-toggle="dropdown">СПЕЦИАЛЬНОСТИ <i
+                                                    class="fa fa-angle-down"></i></a>
+                                            <ul class="sub-menu information">
+                                                {% cache 60 speciality %}
+                                                {% for speciality in specialities %}
+                                                <li><a class="Active"
+                                                       href="{{ speciality.get_absolute_url }}">{{ speciality.name }}</a></li>
+                                                {% endfor %}
+                                                {% endcache %}
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#">КОНТАКТЫ <i class="fa fa-angle-down"></i></a>
+                                            <ul class="sub-menu contact-sub-menu">
+
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Header Area -->
+
+    {% block content %}
+    {% endblock content %}
+
+    <!-- Start Footer Area -->
+    <footer id="footer" class="footer">
+        <!-- Start Middle Top -->
+        <div class="footer-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-8 col-12 m-auto">
+                        <!-- Single Widget -->
+                        <div class="f-about single-footer">
+                            <div class="logo">
+                                <a href="/"><img alt="#" src="{% static 'images/logo/logo-02.svg' %}"></a>
+                            </div>
+                            <p>Получи лучшее образование, отвечающее требованиям современного рынка труда</p>
+                            <div class="footer-social">
+                                <ul>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="lni lni-facebook-filled"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/_btk_312/" target="_blank"><i
+                                                class="lni lni-instagram-original"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/channel/UCu564ohZ36OeYHFsEfxbaSQ"
+                                           target="_blank"><i class="lni lni-youtube"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-12 m-auto">
+                        <!-- Single Widget -->
+                        <div class="single-footer f-contact f-link">
+                            <h3>Cвязаться с нами</h3>
+                            <ul class="footer-contact">
+                                <li><i class="lni lni-phone"></i> <a href="#">0 (312) 61-09-42</a></li>
+                                <li>
+                                    <i class="lni lni-envelope"></i> <a href="mailto:btk.kg@bk.ru"> btk.kg@bk.ru</a>
+                                </li>
+                                <li><i class="lni lni-map-marker"></i> проспект Чуй 215</li>
+                            </ul>
+                        </div><!-- End Single Widget -->
+                    </div>
+                </div>
+            </div>
+        </div><!--/ End Footer Middle -->
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="inner">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="left">
+                                <p>Copyright © «Бишкекский Технический Колледж»</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-12">
+                            <div class="right">
+                                <p>Выполнено клубом <a href="" rel="nofollow">i-Hub</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-12">
+                            <div class="right">
+                                <p>Официальный сайт <a href="" rel="nofollow">www.btk.kg</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Footer Middle -->
+    </footer><!--/ End Footer Area -->
+</div>
+
+<div class="pop" id="pop">
+    <div class="pop-content">
+        <h2>QR - code</h2>
+        <p class="mt-2">Сканируйте qr-код чтобы попасть в эту страницу.</p>
+        <hr>
+    </div>
+    <a class="btn-hover qr-code-base close-qr-code" href="javascript:PopUpHide()" style="display: flex;"><i
+            class="fa fa-times" aria-hidden="true"></i></a>
+</div>
+<!-- ========================= scroll-top ========================= -->
+<a class="scroll-top btn-hover base_up" href="#"><i class="lni lni-chevron-up"></i></a>
+<!-- ========================= JS here ========================= -->
+<a class="scroll-top btn-hover qr-code-base" href="javascript:PopUpShow()" style="display: flex;"><img
+        src="{% static 'images/more/qr-code-scan.svg' %}" alt=""></a>
+
+<script src="{% static 'js/bootstrap.5.0.0.alpha-2-min.js' %}"></script>
+<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}"></script>
+<script src="{% static 'plagins/slick-1.8.1/slick.min.js' %}"></script>
+<script src="{% static 'js/count-up.min.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/imagesloaded.min.js' %}"></script>
+<script src="{% static 'js/isotope.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/f8edb1d03c.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

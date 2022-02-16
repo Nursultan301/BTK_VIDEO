@@ -1,0 +1,20 @@
+<div class="row slider-center" onload="red">
+    {% for post in posts %}
+    <div class="col-lg-4 col-md-6 col-12 mx-2">
+        <div class="single_specialty wow fadeInUp" data-wow-delay=".5s">
+            <div class="card card-specialty">
+                <div class="image img-box">
+                    <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" class="card-img-top" alt="..."></a>
+                </div>
+                <div class="card-body">
+                    <a href="#"><h5 class="card-title">{{ post.title }}</h5></a>
+                    <p>{{ post.created_at }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ post.teacher }}<span class="float-right"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,23 @@
+.a-enter-vr-button {
+    top: 15px !important;
+    left: 120px !important;
+}
+
+.btn {
+    display: block;
+    position: absolute;
+    top: 17px;
+    left: 5px;
+    z-index: 999 !important;
+}
+
+.btn a {
+    color: #000;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    font-weight: 800;
+    padding: 7px 12px;
+    background: #fff;
+    border-radius: 7px;
+}

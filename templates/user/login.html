@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}Авторизация{% endblock title %}
+{% block user %}
+{% endblock user %}
+
+
+{% block content %}
+<section id="login">
+    <div class="container">
+        <div class="login-block">
+            <div class="row">
+                <div class="col-lg-6 p-0">
+                    <div class="signin-block">
+                        <div class="sign-text">
+                            <h3 class="sign-title">Войти</h3>
+                        </div>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+<!--                            <div class="form-group">-->
+<!--                                <input type="text" class="username form-control" placeholder="Имя пользователя">-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <input type="password" class="password form-control" placeholder="Пароль">-->
+<!--                            </div>-->
+                            <div class="form-group">
+                                <button type="submit" class="btn-submit form-control mt-5">Войти</button>
+                            </div>
+                            <div class="form-group d-flex justify-content-between align-items-center">
+                                <div class="sign-checkbox-block d-flex align-items-center">
+                                    <input type="checkbox" checked id="checkbox">
+                                    <label for="checkbox">Запомнить меня</label>
+                                </div>
+                                <div class="forgot-block">
+                                    <a href="#">Забыли пароль?</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-0">
+                    <div class="welcome-block">
+                        <div class="welcome-text">
+                            <h2>Добро пожаловать в систему</h2>
+                            <p>Нету аккаунта?</p>
+                            <a href="{% url 'register' %}">Зарегистрироваться</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{%  endblock content %}

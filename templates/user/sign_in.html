@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+        src="https://kit.fontawesome.com/64d58efce2.js"
+        crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Авторизоваться & Регистрация</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="{% url 'register_validator' %}" method="POST" class="sign-up-form" id="sign-up">{% csrf_token %}
+                    <h2 class="title">Регистрация</h2>
+                    <div class="info-sign-in" id="info-sign-up"></div>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="username" class="form-control mb-5 pl-3 mt-5 border border-primary rounded-pill" placeholder="Имя пользователь"  required id="id_username">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" class="form-control mb-5 pl-3 border border-primary rounded-pill" placeholder="E-mail" required id="id_email">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password1" class="form-control pl-3 border border-primary rounded-pill" placeholder="Пароль" required id="id_password1">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password2" class="form-control mt-4 mb-5 pl-3 border border-primary rounded-pill" placeholder="Подтверждение пароля" required id="id_password2">
+                    </div>
+                    <input type="submit" value="Зарегистрироваться" class="btn solid" />
+                </form>
+
+                <form action="{% url 'login_validator' %}" method="POST" class="sign-in-form" id="sign-in">{% csrf_token %}
+                    <h2 class="title">Авторизоваться</h2>
+                    <div class="info-sign-in" id="info-sign-in"></div>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="username" class="form-control mb-4 pl-3 border border-primary rounded-pill username" placeholder="Имя пользователь" required id="id_username">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" class="form-control pl-3 border border-primary rounded-pill" placeholder="Пароль" required id="id_password">
+                    </div>
+                    <input type="submit" class="btn" value="Войти" id="login_btn"/>
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Добро пожаловать в систему</h3>
+                    <p>Нету аккаунта?</p>
+                    <button class="btn transparent" id="sign-up-btn">Зарегистрироваться</button>
+                </div>
+                <img src="{% static 'images/register.svg' %}" class="image" alt="" />
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Добро пожаловать в систему</h3>
+                    <p>Уже есть аккаунт?</p>
+                    <button class="btn transparent" id="sign-in-btn">Войти</button>
+                </div>
+                <img src="{% static 'images/log.svg' %}" class="image" alt="" />
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+	<script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/sign-in.js' %}"></script>
+  </body>
+</html>

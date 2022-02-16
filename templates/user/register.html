@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block user %}
+{% endblock user %}
+
+
+{% block content %}
+<section id="login">
+            <div class="container">
+				<div class="login-block">
+                	<div class="row">
+                        <div class="col-lg-6 p-0">
+							<div class="welcome-block">
+								<div class="welcome-text">
+									<h2>Добро пожаловать в систему</h2>
+									<p>Уже есть аккаунт?</p>
+									<a href="{% url 'login' %}">Войти</a>
+								</div>
+							</div>
+						</div>
+                	    <div class="col-lg-6 p-0">
+                	        <div class="signin-block">
+                	            <div class="sign-text">
+                	                <h3 class="sign-title">Зарегистрироваться</h3>
+                	            </div>
+                	            <form method="post">
+									{% csrf_token %}
+									{{ form.as_p }}
+
+<!--									{{ form.non_field.errors }}-->
+<!--                	                <div class="form-group">-->
+<!--										{{ form.username }}-->
+<!--										<div class="invalid-feedback">-->
+<!--											{{ form.username.errors }}-->
+<!--										</div>-->
+<!--                	                </div>-->
+<!--                                    <div class="form-group">-->
+<!--                	                    {{ form.email }}-->
+<!--										<div class="invalid-feedback">-->
+<!--											{{ form.email.errors }}-->
+<!--										</div>-->
+<!--                	                </div>-->
+<!--                	                <div class="form-group">-->
+<!--                	                    {{ form.password1 }}-->
+<!--										<div class="invalid-feedback">-->
+<!--											{{ form.password1.errors }}-->
+<!--										</div>-->
+<!--                	                </div>-->
+<!--                                    <div class="form-group">-->
+<!--                	                    {{ form.password2 }}-->
+<!--										<div class="invalid-feedback">-->
+<!--											{{ form.password2.errors }}-->
+<!--										</div>-->
+<!--                	                </div>-->
+                	                <div class="form-group">
+                	                    <button class="btn-submit form-control">Зарегистрироваться</button>
+                	                </div>
+                	            </form>
+                	        </div>
+                	    </div>
+                	</div>
+				</div>
+            </div>
+        </section>
+{% endblock content %}
