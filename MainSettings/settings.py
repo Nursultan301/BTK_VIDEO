@@ -72,12 +72,11 @@ WSGI_APPLICATION = 'MainSettings.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'btk_video',
-        'USER': 'Nursultan',
-        'PASSWORD': '12345',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'BTK_VIDEO',
+        'USER': 'nurs',
+        'PASSWORD': 'jS#oa23X)x!',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
     }
 }
 
